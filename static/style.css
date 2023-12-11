@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    }
+    
+    .container {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .rover-buttons {
+    margin: 20px 0;
+    }
+    
+    .rover-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    }
+    
+    .rover-button:hover {
+    background-color: #0056b3;
+    }
+    
+    .date-selection {
+    margin: 20px 0;
+    }
+    
+    #imageContainer {
+    margin-top: 20px;
+    }
+    
+    #imageContainer img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    }
