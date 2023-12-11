@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars Rover Images</title>
+    <!-- Add CSS stylesheets if needed -->
+</head>
+<body>
+    <h1>Mars Rover Images</h1>
+    
+    <!-- Form for rover selection, date type, date input -->
+    <form id="roverForm">
+        <label for="roverSelect">Select a Rover:</label>
+        <select id="roverSelect" name="rover">
+            <option value="curiosity">Curiosity</option>
+            <option value="opportunity">Opportunity</option>
+            <option value="spirit">Spirit</option>
+        </select>
+        <br><br>
+        <label>Date Type:</label>
+        <input type="radio" name="date_type" value="earth_date"> Earth Date
+        <input type="radio" name="date_type" value="sol"> Martian Sol
+        <br><br>
+        <!-- Input fields for date selection based on the chosen type -->
+        <input type="text" id="dateInput" name="date" placeholder="Enter date">
+        <input type="submit" value="Fetch Images">
+    </form>
+
+    <!-- Container to display images -->
+    <div id="imageContainer">
+        <!-- Images fetched from backend will be displayed here -->
+    </div>
+
+    <!-- Add JavaScript for handling form submission and displaying images -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#roverForm').submit(function(event) {
+            event.preventDefault();
+            
+            // Fetch form data
+            const formData = new FormData(this);
+            
+            // Make AJAX request to backend endpoint '/fetch_images'
+            $.ajax({
+                type: 'POST',
+                url: '/fetch_images',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // Handle successful response
+                    displayImages(response.images_data);
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    console.error(error);
+                }
+            });
+        });
+
+        // Function to display images in the container
+        function displayImages(imagesData) {
+            // Logic to display images based on data received from backend
+            // Update the 'imageContainer' with fetched images
+            const imageContainer = document.getElementById('imageContainer');
+            // Iterate through 'imagesData' and update HTML to display images
+            // Example:
+            // imagesData.forEach(image => {
+            //     const imgElement = document.createElement('img');
+            //     imgElement.src = image.img_src;
+            //     imageContainer.appendChild(imgElement);
+            // });
+        }
+    </script>
+</body>
+</html>
