@@ -57,7 +57,7 @@ Beneficial Topics: There are many beneficial topics we can understand through th
 ### This program is a web application built with Flask that interacts with NASA's Mars Rover Photos API to fetch and display images captured by the Curiosity, Opportunity, and Spirit rovers. We have learned a lot along the way, and would like to share how our code works in the following sections:
 
 **Features**
-The code allows users to view photos based on rover selection and specified dates in Martian sols or Earth dates while integrating with NASA's Mars Rover Photos API to fetch images. The purpose of the code is to provides a user-friendly interface for selecting rovers, date types, and viewing images.The backend has many features and is responsible for handling API requests, data retrieval, and response processing.
+The code allows users to view photos by choosing from three different rovers and specifiying dates in Martian sols or Earth dates. In return the program will fetch images from the selected rover using Nasa's API. The purpose of the code is to provides a user-friendly interface for selecting rovers, date types, and viewing images.The backend has many features and is responsible for handling API requests, data retrieval, and response processing.
 
 **Setup Instructions If You Would Like To Expand on The Project**
 If you are planning to use the code or modify it in any way, please do the following:
