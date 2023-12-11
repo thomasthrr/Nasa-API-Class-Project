@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mars Rover Images</title>
-    <!-- Add CSS stylesheets if needed -->
+    <!-- Seperate file for style sheet created in css -->
 </head>
 <body>
     <h1>Mars Rover Images</h1>
@@ -40,7 +40,7 @@
             // Fetch form data
             const formData = new FormData(this);
             
-            // Make AJAX request to backend endpoint '/fetch_images'
+            // ajax must be requested to the backend endpoint '/fetch_images'
             $.ajax({
                 type: 'POST',
                 url: '/fetch_images',
@@ -48,28 +48,22 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    // Handle successful response
+                    // Handles a successful response
                     displayImages(response.images_data);
                 },
                 error: function(xhr, status, error) {
-                    // Handle error response
+                    // Handles an error response
                     console.error(error);
                 }
             });
         });
 
-        // Function to display images in the container
+        // Displays images in container
         function displayImages(imagesData) {
             // Logic to display images based on data received from backend
             // Update the 'imageContainer' with fetched images
             const imageContainer = document.getElementById('imageContainer');
-            // Iterate through 'imagesData' and update HTML to display images
-            // Example:
-            // imagesData.forEach(image => {
-            //     const imgElement = document.createElement('img');
-            //     imgElement.src = image.img_src;
-            //     imageContainer.appendChild(imgElement);
-            // });
+            // runs 'imagesData' you must update HTML to display images
         }
     </script>
 </body>
